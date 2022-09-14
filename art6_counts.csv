@@ -1,0 +1,97 @@
+FactorNo.,JoeFull,JoeShort,Factor,Defeaters,Symbolic,Tally_non,Tally_vio
+1,V1,,Violation of Article 6,[2c 100],REJECT IF 2c OR 100,0,0
+1c,,,NOT Violation of Article 6,[1],,0,0
+2c,,,NOT Is a victim,[2],REJECT  IF 2,0,0
+100,,,Fair Process,[8c 24c 25c],REJECT IF NOT 8 OR NOT 24 OR NOT 25,0,0
+100c,,,NOT Fair Process,[100],,0,0
+8,I3,,Fair and Public,[9c 11c 14c 23c 43c 103c],REJECT IF NOT 9 OR NOT 11 OR NOT 14 OR 23c OR 43c OR 103c,0,0
+8c,,,NOT Fair and Public,[8],,0,0
+9,I3F1,,Conducted in Reasonable Time,[10c 44c],REJECT IF 10c OR 44c,0,0
+9c,,,NOT Conducted in Reasonable Time,[9],,0,0
+44c,,,NOT There have been no significant delays at any point,[44],REJECT IF 44,0,0
+10c,,,NOT No delays caused by the state,[10],REJECT IF 10,0,0
+11,I3F2,,Independent and Impartial,[12c 13c],REJECT IF 12c OR 13c,0,0
+11c,,,NOT Independent and Impartial,[11],,0,0
+12c,,,NOT Subjectively Impartial,[12],REJECT IF 12,0,0
+13c,,,NOT Objectively Impartial,[13],REJECT IF 13,0,0
+14,I3F3,,Conducted publicly where appropriate,[14c],ACCEPT IF 101 OR 102,0,0
+14c,,,NOT Conducted publicly where appropriate,[101 102],,0,0
+101,,,Public and appropriate,[15c 16c],REJECT IF 15c OR 16c,0,0
+101c,,,NOT Public and appropriate,[101],,0,0
+102,,,Not public and not appropriate,[15 16],REJECT IF 15 OR 16,0,0
+102c,,,NOT Not public and not appropriate,[102],,0,0
+15,,,Appropriate for public process,[17 18 19 20],REJECT IF 17 OR 18 OR 19 OR 20,0,0
+15c,,,NOT Appropriate for public process,[15],,0,0
+17,,,Public prejudices outcome,[17c],REJECT IF 17c,0,0
+18,,,Safety Concerns,[18c],REJECT IF 18c,0,0
+19,,,Privacy Concerns,[19c],REJECT IF 19c,0,0
+20,,,Public conductance would hinder justice,[20c],REJECT IF 20c,0,0
+16,,,Public Process,[21c 22c],REJECT IF 21c OR 22c,0,0
+16c,,,NOT Public Process,[16],,0,0
+21c,,,NOT Case was pronounced publicly,[21],REJECT IF 21,0,0
+22c,,,NOT Case was conducted publicly,[22],REJECT IF 22,0,0
+23c,,,NOT Equality of Arms,[23],REJECT IF 23,0,0
+43c,,,NOT Access to Court ,[43],REJECT IF 43,0,0
+103,I3F6,,Legal certainty is upheld,[104c 108],REJECT IF 104c OR 108,0,0
+103c,,,NOT Legal certainty is upheld,[103],,0,0
+104,,,Decision reasonably binding,[104c],ACCEPT IF 105 OR 106,0,0
+104c,,,NOT Decision reasonably binding,[105 106],,0,0
+108,I3F6F1,,There are conflicting decisions in case law which affect the fairness of the case,[109c 110],REJECT IF 109c OR 110,0,0
+108c,,,NOT There are conflicting decisions in case law which affect the fairness of the case,[108],,0,0
+109c,,,NOT There are profound and long-standing differences in the case law,[109],REJECT IF 109,0,0
+24,I4,,Presumed innocent until guilty,[40c 41c 45c],REJECT IF 40c OR 41c OR 45c,0,0
+24c,,,NOT Presumed innocent until guilty,[24],,0,0
+40c,,,NOT Prosecution bares burden of proof,[40],REJECT IF 40,0,0
+41c,,,NOT Any doubt benefits the accused,[41],REJECT IF 41,0,0
+45c,,,NOT Initially presumed innocent,[45],REJECT IF 45,0,0
+25,I5,,Had the minimum rights,[26c 30c 31c 34c 36c 38c],REJECT IF NOT 26 OR NOT 30 OR NOT 31 OR NOT 34 OR NOT 36 OR 38,0,0
+25c,,,NOT Had the minimum rights,[25],,0,0
+26,I5F1,,Informed Promptly,[27c 28c 29c],REJECT IF 27c OR 28c OR 29c,0,0
+26c,,,NOT Informed Promptly,[26],,0,0
+27c,,,NOT promptly informed in the correct language,[27],REJECT IF 27,0,0
+28c,,,NOT promptly given detailed case circumstances,[28],REJECT IF 28,0,0
+29c,,,NOT promptly told what crime they were accused of,[29],REJECT IF 29,0,0
+30c,,,NOT Allowed Time and Facilities for Defence,[30],REJECT IF 30,0,0
+31,I5F2,,Allowed to defend themselves in Person,[31c],ACCEPT IF 32 OR 33 OR 42,0,0
+31c,,,NOT Allowed to defend themselves in Person,[32 33 42],,0,0
+34,I5F3,,Given appropriate legal assistance,[35c 46c],REJECT IF 35c OR 46c,0,0
+34c,,,NOT Given appropriate legal assistance,[34],,0,0
+46c,,,NOT The accused had access to a lawyer of their own choosing,[46],REJECT IF 46,0,0
+35c,,,NOT Legal assistance was free if necessary,[35],REJECT IF 35,0,0
+36,I5F4,,Allowed to fairly examine witnesses,[37c 39c],REJECT IF NOT 37 OR NOT 39,0,0
+36c,,,NOT Allowed to fairly examine witnesses,[36],,0,0
+37c,,,NOT Witnesses were examined under same conditions,[37],REJECT IF 37,0,0
+39c,,,NOT Witnesses had a valid reason for non attendance,[39],REJECT IF 39,0,0
+38c,,,NOT The applicant could have free access to interpreter,[38],REJECT IF 38,0,0
+2,I1,f2,Is a victim,[],ACCEPT IF The applicant is a victim,14,15
+44,I3F1Q1,f9,There have been no significant delays at any point,[],,15,3
+10,I3F1Q2,f10,No delays caused by the state,[],REJECT IF The state has delayed the case unnecessarily,15,4
+12,I3F2Q1,f12,Subjectively Impartial,[],REJECT IF Any individual showed a conflict of interest or dislike of a party,15,15
+13,I3F2Q2,f13,Objectively Impartial,[],REJECT IF There are objective indicators that the court may not be impartial,15,15
+17c,I3F3Q1,f15,NOT Public prejudices outcome,[],REJECT IF Public would affect the result of the case,15,15
+18c,I3F3Q2,f16,NOT Safety Concerns,[],REJECT IF Safety of people involved cannot be guaranteed,15,15
+19c,I3F3Q3,f17,NOT Privacy Concerns,[],REJECT IF There are overriding privacy issues concerning either the people involved or the evidence,15,15
+20c,I3F3Q4,f18,NOT Public conductance would hinder justice,[],REJECT IF There are any issues which would hinder justice being served,14,15
+21,I3F3Q5,f19,Case was pronounced publicly,[],ACCEPT IF The result of the case was pronounced publicly,15,15
+22,I3F3Q6,f20,Case was conducted publicly,[],ACCEPT IF The result of the case was conducted publicly,14,14
+23,I3F4Q1,f21,Equality of Arms,[],ACCEPT IF There is a fair balance between the parties,15,15
+43,I3F5Q1,f41,Access to Court ,[],ACCEPT IF Given suitable access to a court,15,14
+105,I3F6Q1,f42,The highest court is considered binding in its findings,[],,15,11
+106,I3F6Q2,f43,The case was reopened due to new facts or a fundamental defect in fairness,[],,0,0
+109,I3F6F1Q1,f44,There are profound and long-standing differences in the case law,[],,0,0
+110,I3F6F1Q2,f45,Tools have been used to overcome any difference in case law,[],,0,0
+40,I4Q2,f38,Prosecution bares burden of proof,[],ACCEPT IF The prosecution does not bare the burden of proof,15,15
+41,I4Q3,f39,Any doubt benefits the accused,[],ACCEPT IF Any doubt does not benefit the accused,15,15
+45,I4Q1,f22,Initially presumed innocent,[],,15,9
+27,I5F1Q1,f25,Promptly informed in the correct language,[],REJECT IF The victim is unable to understand court proceedings with any interpreters,15,15
+28,I5F1Q2,f26,Promptly given detailed case circumstances,[],REJECT IF The victim is not provided with enough detail of the case which enables a sufficient defence,15,15
+29,I5F1Q3,f27,Promptly told what crime they were accused of,[],REJECT IF The victim is not told what crime they are accused of,15,15
+30,I5Q1,f28,Allowed Time and Facilities for Defence,[],,15,15
+32,I5F2Q1,f30,Attempts to Escape Trial,[],ACCEPT IF The accused has attempted to escape trial,0,6
+33,I5F2Q2,f31,Waived their right to defence in person,[],ACCEPT IF The accused has waived their right and is presented by a lawyer of their own choosing,15,14
+42,I5F2Q3,f40,Not prevented from accessing lawyers,[],REJECT IF Prevented from accessing a lawyer,15,15
+46,I5F3Q1,f32,The accused had access to a lawyer of their own choosing,[],,15,8
+35,I5F3Q2,f33,Legal assistance was free if necessary,[],REJECT IF The state does not provide legal aid if required,15,15
+37,I5F4Q1,f35,Witnesses were examined under same conditions,[],REJECT IF The accused can not examine the witnesses under the same conditions as the opponent,15,15
+39,I5F4Q2,f37,Witnesses had a valid reason for non attendance,[],REJECT IF Any witness that does not attend court does not have a reason why they should be unable to provide witness testimony to the court,15,15
+38,I5Q2,f36,The applicant could have free access to interpreter,[],REJECT IF The defendant that required an interpreter was denied an interpreter or was required to pay for the interpreter,15,15
